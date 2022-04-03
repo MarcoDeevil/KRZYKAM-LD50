@@ -1,5 +1,5 @@
 canvas {
-    border: 3px dotted black;
+    border: 2px solid black;
     display: inline;
 }
 
@@ -9,7 +9,7 @@ canvas {
 }
 
 html {
-    background: rgb(61, 61, 61);
+    background: #1e272e;
 }
 
 .endingScreenBackground {

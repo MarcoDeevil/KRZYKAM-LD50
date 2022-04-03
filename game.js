@@ -123,11 +123,14 @@ function spawnSadWords() {
         currentSadWordsTimeRender = 20;
     }
 }
+
+const background = new Image();
+background.src = "https://i.postimg.cc/90BfGd1v/s4m-ur4i-bg-clouds.png";
  
 setInterval(function () {
-   
     checkLife();
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    ctx.fillRect(0, 0, canvas.width, canvas.height); 
+    ctx.drawImage(background,0,0,canvas.width, canvas.height)
     drawLine(lineDrawPoint);
     drawPlayer();
     spawnSadWords();
