@@ -1,44 +1,55 @@
 canvas {
     border: 3px dotted black;
     display: inline;
-  }
+}
 
 #canvas {
     width: 100%;
-    text-align:center;
- }
+    text-align: center;
+}
 
-  html {
+html {
     background: rgb(61, 61, 61);
+}
 
-  }
-
-  .endingScreenBackground {
-    background-color: #2c3e50;
+.endingScreenBackground {
+    background-color: #353b48;
     width: 100vw;
     height: 100vh;
     position: absolute;
     left: 0;
     top: 0;
     text-align: center;
-  }
-  .endingQuote{
-    color:#000;
-    height:750px;
-    width:950px;
-    margin: auto;
-    margin-top:95px;
-      background: url("https://i.postimg.cc/TP6pMbrp/Pngtree-cartoon-style-rain-cloud-5052930.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      color:#fff;
-  }
+    font-family: 'Caveat', cursive;
+    font-size: 54px;
+}
 
-  .endingQuote > p {
-      padding-top: 200px;
-      font-size: 34px;
-      font-family: 'Caveat', cursive;
-      letter-spacing: 2.5px;
-      width:650px;
-      padding: 115px;
-  }
+.endingQuote {
+    color: #000;
+    height: 750px;
+    width: 950px;
+    margin: auto;
+    margin-top: -105px;
+    background: url("https://i.postimg.cc/TP6pMbrp/Pngtree-cartoon-style-rain-cloud-5052930.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 95px;
+    padding-left: 25px;
+}
+
+.quoteText {
+    padding-top: 200px;
+    font-size: 54px;
+    font-family: 'Caveat', cursive;
+    color: #C4E538;
+    letter-spacing: 4.5px;
+    width: 650px;
+    font-weight: 800;
+    margin: auto;
+    margin-top: -165px;
+}
+
+.endingScreenBackground>h1 {
+    color: #c23616;
+}
