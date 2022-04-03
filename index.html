@@ -1,15 +1,28 @@
-<!-- HTML code for racing game -->
-<h1 style="margin:0;">Bedzie dobrze</h1>
-<canvas id="canvas" width="800" height="800">
-Sorry, the web browser you are using doesn't support canvas elements!
-</canvas>
+<html>
 
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HTML code for racing game -->
+  <h1 style="margin:0;">Bedzie dobrze</h1>
+  <canvas id="canvas" width="800" height="800">
+    Sorry, the web browser you are using doesn't support canvas elements!
+  </canvas>
+  <template id="endingScreen">
+    <div class="endingScreenBackground">
+      <h1>Death has arrived...</h1>
+      <div class="endingQuote">
+        <p>"I TAK KURWA DO ZAJEBANIA I TAK KURWA DO ZAJEBANIA I TAK KURWA DO ZAJEBANIA"</p>
+      </div>
+
+    </div>
+  </template>
+</body>
 <script type="module" src="game.js"></script>
-<style>
-canvas {
-    border: 3px dotted black;
-  }
-  html{
-    background: rgb(61, 61, 61);
-  }
-</style>
+
+</html>

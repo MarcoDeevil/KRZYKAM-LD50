@@ -1,0 +1,37 @@
+canvas {
+    border: 3px dotted black;
+  }
+
+  html {
+    background: rgb(61, 61, 61);
+  }
+
+  .endingScreenBackground {
+    background-color: #2c3e50;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    text-align: center;
+  }
+  .endingQuote{
+    color:#000;
+    height:750px;
+    width:950px;
+    margin: auto;
+    margin-top:95px;
+      background: url("https://i.postimg.cc/TP6pMbrp/Pngtree-cartoon-style-rain-cloud-5052930.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      color:#fff;
+  }
+
+  .endingQuote > p {
+      padding-top: 200px;
+      font-size: 34px;
+      font-family: 'Caveat', cursive;
+      letter-spacing: 2.5px;
+      width:650px;
+      padding: 115px;
+  }

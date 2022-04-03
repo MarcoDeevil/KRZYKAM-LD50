@@ -1,3 +1,5 @@
+import { showEndingScreen } from "./endingScreen.js";
+
 var lineFallSpeed = 1.0;
 var lineDrawPoint = 10;
 var playerLifeLine = 750;
@@ -11,6 +13,7 @@ var decreaseLineFallSpeedOnClick = -0.09
 var increaseLineFallSpeedOnFrame = 0.011
 var maxLineFallSpeed = 2
 var minLineFallSpeed = 0.21
+let isPlayerDead = false;
 
 //to tez moze byc losowane z jakiegos przedzialu
 //i wtedy wpushowywane tez do obiektu w dropDownWords
@@ -20,16 +23,16 @@ const sadWords = ["depression", "sorrow"];
 const renderedSadWords = [];
 
 const dropDownWords = () => {
-    const start_x = Math.floor(Math.random()*canvas.width - 100)+101;
-    const fallSpeed = Math.floor(Math.random()*4)+3;
+    const start_x = Math.floor(Math.random() * canvas.width - 100) + 101;
+    const fallSpeed = Math.floor(Math.random() * 4) + 3;
     console.log(fallSpeed);
     renderedSadWords.push({
-        word: sadWords[Math.floor(Math.random()*sadWords.length)],
-        x: start_x, 
+        word: sadWords[Math.floor(Math.random() * sadWords.length)],
+        x: start_x,
         y: 50,
         fallSpeed: fallSpeed
     });
-    
+
 }
 
 // SETINTERVAL /
@@ -44,18 +47,24 @@ function drawLine(lineCurrentPoint) {
 
 function drawPlayer() {
     ctx.fillStyle = 'rgb(00, 200, 0)';
-    ctx.fillRect(canvas.width/2, playerLifeLine, playerSize, playerSize);
+    ctx.fillRect(canvas.width / 2, playerLifeLine, playerSize, playerSize);
 }
 
 //+50 to wysokość playera
 function checkLife() {
-    if(lineDrawPoint + playerSize >= playerLifeLine){
-        console.log("śmierć, ale jaka?");
+    if (isPlayerDead === false) {
+        // Death of a Player
+        if (lineDrawPoint + playerSize >= playerLifeLine) {
+            console.log("śmierć, ale jaka?");
+            showEndingScreen(200);
+            isPlayerDead = true;
+        }   
     }
+
 }
 
 function increaceLineFallSpeed() {
-    if(lineFallSpeed < maxLineFallSpeed) {
+    if (lineFallSpeed < maxLineFallSpeed) {
         lineFallSpeed += increaseLineFallSpeedOnFrame
     }
 }
@@ -65,13 +74,13 @@ setInterval(function () {
 
 
     checkLife();
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawLine(lineDrawPoint);
     drawPlayer();
 
     renderedSadWords.forEach(element => {
         ctx.font = "30px Arial";
-        if(element.y >= lineDrawPoint){
+        if (element.y >= lineDrawPoint) {
             element.y = lineDrawPoint
         }
         else {
@@ -83,21 +92,21 @@ setInterval(function () {
 }, 1000 / 60);
 
 //space down
-document.addEventListener("keydown", function(e) {
+document.addEventListener("keydown", function (e) {
     //to nie powinno byc na spacje, na spacje powinny byc dobre a te jakos czasowo? a moze tez na spacje lolz do przemyslenia
     dropDownWords();
-    if(lineFallSpeed > minLineFallSpeed){
-        if(e.keyCode === 32){
-            if (!fired){
+    if (lineFallSpeed > minLineFallSpeed) {
+        if (e.keyCode === 32) {
+            if (!fired) {
                 lineFallSpeed += decreaseLineFallSpeedOnClick
                 fired = true
-            } 
+            }
         }
     }
 });
 
-document.addEventListener("keyup", function(e) {
-    if(e.keyCode === 32){
+document.addEventListener("keyup", function (e) {
+    if (e.keyCode === 32) {
         fired = false;
     }
 });
