@@ -2,11 +2,11 @@ import { showEndingScreen } from "./endingScreen.js";
 
 var lineFallSpeed = 1.0;
 var lineDrawPoint = 10;
-var playerLifeLine = 750;
+
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fired = false;
-
+var playerLifeLine = canvas.height-50;
 var playerSize = 50;
 var score = 0;
 
@@ -23,10 +23,12 @@ var textFallSpeed = 3;
 var sadWordsTimeRender = 20;
 var currentSadWordsTimeRender = sadWordsTimeRender;
 
-const sadWords = ["depression", "sorrow"];
+const sadWords = ["depression", "sorrow", "loneliness", "fears", "your dog died", "morning alarm",
+"failing", "bills", "obesity", "sadness", "bullying", "terrorism", "agression"];
 const renderedSadWords = [];
-const goodWords = ["you can do it", "keep it up", "Love For All, Hatred For None", "Change the world by being yourself", "Every moment is a fresh beginning",
- "Never regret anything that made you smile", "Die with memories, not dreams"]
+
+const goodWords = ["you can do it", "keep it up", "you matter", "somebody loves you", "it's ok, i'm here", 
+"life goes on", "you're beautiful", "don't give up", "keep pushing"]
 const renderedGoodWords = [];
 
 const dropDownWords = () => {
@@ -42,7 +44,7 @@ const dropDownWords = () => {
 }
 
 const shootGoodWords = () => {
-    const offset_x = Math.floor(Math.random()*-6)+3;
+    const offset_x = Math.floor(Math.random()*-10)+5;
     const riseSpeed = Math.floor(Math.random()*4)+3;
     console.log(riseSpeed);
     renderedGoodWords.push({
@@ -54,13 +56,11 @@ const shootGoodWords = () => {
     });
 }
 
-// SETINTERVAL /
-
 function drawLine(lineCurrentPoint) {
     increaceLineFallSpeed()
     lineDrawPoint = lineDrawPoint + lineFallSpeed;
     ctx.fillStyle = 'rgb(200, 0, 0)';
-    ctx.fillRect(0, lineCurrentPoint, 800, 50);
+    ctx.fillRect(0, lineCurrentPoint, canvas.width, 50);
 }
 
 function drawPlayer() {

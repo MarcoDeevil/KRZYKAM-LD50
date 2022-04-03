@@ -1,9 +1,16 @@
 canvas {
     border: 3px dotted black;
+    display: inline;
   }
+
+#canvas {
+    width: 100%;
+    text-align:center;
+ }
 
   html {
     background: rgb(61, 61, 61);
+
   }
 
   .endingScreenBackground {
