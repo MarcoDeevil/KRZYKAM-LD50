@@ -74,7 +74,7 @@ function checkLife() {
         // Death of a Player
         if (lineDrawPoint + playerSize >= playerLifeLine) {
             console.log("śmierć, ale jaka?");
-            showEndingScreen(200);
+            showEndingScreen(score);
             isPlayerDead = true;
         }   
     }
