@@ -7,12 +7,14 @@ let interval = 0;
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var fired = false;
-var playerLifeLine = canvas.height - 50;
-var playerSize = 50;
+
+var playerLifeLine = canvas.height-50 ;
+var playerSize = 150;
+
 var score = 0;
 
-var decreaseLineFallSpeedOnClick = -0.09
-var increaseLineFallSpeedOnFrame = 0.011
+var decreaseLineFallSpeedOnClick = -0.17
+var increaseLineFallSpeedOnFrame = 0.019
 var maxLineFallSpeed = 2
 var minLineFallSpeed = 0.21
 let isPlayerDead = false;
@@ -63,10 +65,12 @@ function drawLine(lineCurrentPoint) {
     ctx.fillStyle = '#700101';
     ctx.fillRect(0, lineCurrentPoint, canvas.width, 50);
 }
-
+const playerImage = new Image();
+playerImage.src = "https://i.postimg.cc/28901nwH/Lovepik-com-401698826-stick-figure-with-umbrella.png"
 function drawPlayer() {
     ctx.fillStyle = 'rgb(00, 200, 0)';
-    ctx.fillRect(canvas.width / 2, playerLifeLine, playerSize, playerSize);
+    ctx.drawImage(playerImage, canvas.width/2, playerLifeLine-100, playerSize, playerSize);
+    //ctx.fillRect(canvas.width / 2, playerLifeLine, playerSize, playerSize);
 }
 
 //+50 to wysokość playera
