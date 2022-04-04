@@ -14,8 +14,8 @@ html {
 
 .endingScreenBackground {
     background-color: #353b48;
-    width: 100vw;
-    height: 100vh;
+    width:100%;
+    height:100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -30,7 +30,7 @@ html {
     width: 950px;
     margin: auto;
     margin-top: -105px;
-    background: url("https://i.postimg.cc/TP6pMbrp/Pngtree-cartoon-style-rain-cloud-5052930.png");
+    background: url("https://i.postimg.cc/76659Vm8/Pngtree-cartoon-style-rain-cloud-5052930.png");
     background-size: contain;
     background-repeat: no-repeat;
     color: #fff;
