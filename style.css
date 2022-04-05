@@ -53,3 +53,17 @@ html {
 .endingScreenBackground>h1 {
     color: #c23616;
 }
+
+.pressSpace{
+    color:#fff;
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50%{
+        opacity:0;
+    }
+}
