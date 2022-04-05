@@ -52,6 +52,7 @@ html {
 
 .endingScreenBackground>h1 {
     color: #c23616;
+    margin-bottom:0;
 }
 
 .pressSpace{
